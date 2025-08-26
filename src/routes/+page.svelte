@@ -1,8 +1,9 @@
 <script lang="ts">
+    import resume from '$lib/assets/resume.pdf';
     import AcademiconsGoogleScholarSquare from '~icons/academicons/google-scholar-square';
     import AcademiconsOrcidSquare from '~icons/academicons/orcid-square';
     import RiLinkedinBoxFill from '~icons/ri/linkedin-box-fill';
-    import RiGithubFill from '~icons/ri/github-fill'
+    import RiGithubFill from '~icons/ri/github-fill';
 </script>
 
 
@@ -32,7 +33,7 @@
     </div>
     
     <div class="container mt-4 mb-6">
-        <a href="/resume.pdf" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" download>Download Resume</a>
+        <a href="{resume}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" download>Download Resume</a>
     </div>
 
     <div>
