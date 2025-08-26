@@ -1,0 +1,34 @@
+baseURL = 'https://gordonstein.dev/'
+languageCode = 'en-us'
+title = 'Gordon Stein - Portfolio & CV'
+theme = 'ananke'
+
+# Site parameters
+[params]
+  description = "Software Developer & Technology Enthusiast"
+  author = "Gordon Stein"
+  favicon = ""
+  site_logo = ""
+  # Background color for home page hero
+  background_color_class = "bg-black"
+  # Featured image for social sharing
+  featured_image = ""
+  recent_posts_number = 5
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects" 
+    url = "/projects/"
+    weight = 20
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 30
