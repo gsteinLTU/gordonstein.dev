@@ -22,7 +22,7 @@
         margin: 8px auto 0;
     }
 
-    section h2::after, hr {
+    section h2::after {
         content: '';
         display: block;
         height: 4px;
