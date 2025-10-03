@@ -1,5 +1,6 @@
 <script lang="ts">
     // A simple card component to wrap project details
+    import { base } from '$app/paths';
     interface Props {
         title: string;
         technologies: string;
@@ -24,7 +25,7 @@
     </div>
     {#if image}
         <figure class="mb-4">
-            <img src={image} alt={title} class="w-full h-48 object-cover rounded-md mb-4" />
+            <img src={(image?.startsWith('/') ? base + image : image)} alt={title} class="w-full h-48 object-cover rounded-md mb-4" />
         </figure>
     {/if}
 </article>
