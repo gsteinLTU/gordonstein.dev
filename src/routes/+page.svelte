@@ -4,6 +4,7 @@
     import AboutMe from '$lib/components/sections/AboutMe.svelte';
     import Links from '$lib/components/sections/Links.svelte';
     import Research from '$lib/components/sections/Research.svelte';
+    import Projects from '$lib/components/sections/Projects.svelte';
 </script>
 
 
@@ -24,6 +25,7 @@
     </div>
 
     <AboutMe />
+    <Projects />
     <Research />
     <ContactMe />
 </div>
