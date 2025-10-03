@@ -41,24 +41,3 @@
     <AboutMe />
     <ContactMe />
 </div>
-
-<style>
-    section {
-        margin-bottom: 2rem;
-    }
-
-    section h2::after {
-        content: '';
-        position: relative;
-        width: 50%;
-        left: -25%;
-        margin: 8px auto 0;
-    }
-
-    section h2::after, hr {
-        content: '';
-        display: block;
-        height: 4px;
-        background: #15305c;
-    }
-</style>
