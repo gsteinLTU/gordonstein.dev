@@ -3,6 +3,7 @@
     import ContactMe from '$lib/components/sections/ContactMe.svelte';
     import AboutMe from '$lib/components/sections/AboutMe.svelte';
     import Links from '$lib/components/sections/Links.svelte';
+    import Research from '$lib/components/sections/Research.svelte';
 </script>
 
 
@@ -23,6 +24,7 @@
     </div>
 
     <AboutMe />
+    <Research />
     <ContactMe />
 </div>
 
