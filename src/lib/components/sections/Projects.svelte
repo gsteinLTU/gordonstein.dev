@@ -5,7 +5,7 @@
 <section class="mt-6 text-left">
     <h2 class="text-2xl font-bold mb-2">Selected Projects</h2>
 
-<ProjectCard title="RoboScape Online" technologies="TypeScript, Rust, WebSockets, Docker, AWS" image="/robot.png">
+<ProjectCard title="RoboScape Online" technologies="TypeScript, Rust, WebSockets, Docker, AWS" image="/robot.png" github="https://github.com/gsteinLTU/roboscapesim-rs">
     RoboScape Online is a networked educational robotics simulation platform designed for novice programmers. 
     It enables students to control virtual robots in a 3D environment, facilitating collaborative learning and remote education. 
     The platform integrates with a block-based programming language, NetsBlox, to make robotics accessible to beginners.
@@ -19,7 +19,7 @@
     We wanted to utilize a freshman course for a research study, but needed a way to conduct interviews at scale while also reducing bias. This platform uses AI to conduct anonymous semi-structured interviews with students, allowing researchers to gather qualitative data without needing to perform interviews individually.
 </ProjectCard>
 
-<ProjectCard title="AI Ethics Educational Game" technologies="TypeScript, Svelte, Rust, TensorFlow.js, Postgres, AWS" image="/spot.png">
+<ProjectCard title="AI Ethics Educational Game" technologies="TypeScript, Svelte, Rust, TensorFlow.js, Postgres, AWS" image="/spot.png" github="https://github.com/IDEA-Lab-Vanderbilt-University/cml-narrative/">
     Young students learn about computational thinking, machine learning, and AI ethics through an interactive game. Students train and test machine learning models in a custom age-appropriate interface, while also considering the ethical implications of AI technologies. 
 </ProjectCard>
 
@@ -27,7 +27,7 @@
     BloxBuddy is an AI-powered assistant designed to help students learn block-based programming in NetsBlox. Students are guided through a conversation designed to keep them on track, while also being helpful without sacrificing the learning process by giving away answers.
 </ProjectCard>
 
-<ProjectCard title="Gesture Recognition Blocks" technologies="TypeScript, Svelte, TensorFlow.js">
+<ProjectCard title="Gesture Recognition Blocks" technologies="TypeScript, Svelte, TensorFlow.js" github="https://github.com/clicclab/SensorTimeline/">
     Time series gesture recognition blocks for Scratch, using classification models trained with TensorFlow.js in a custom web interface. These blocks allow students to create interactive applications that respond to dynamic body movements.
 </ProjectCard>
 </section>
