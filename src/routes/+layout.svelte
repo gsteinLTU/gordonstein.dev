@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Links from '$lib/components/sections/Links.svelte';
 	import '../app.css';
 	
 	let { children } = $props();
@@ -19,4 +20,30 @@
 	<meta property="og:url" content="https://gordonstein.dev" />
 </svelte:head>
 
+
+
+<div class="md:w-2/3 w-full bg-white rounded-lg shadow-lg p-8 text-center ml-auto mr-auto mt-20">
+    <div class="container">
+        <h1 class="text-3xl font-bold">Gordon Stein</h1>
+    </div>
+    
+    <div class="container">
+        <h2 class="text-sm text-gray-700 md:text-xl font-semibold">Software Developer & Education Researcher</h2>
+    </div>
+    <hr class="my-2 mb-4">
+
+	<Links />
+
 {@render children?.()}
+
+</div>
+
+
+<style>
+    hr {
+        content: '';
+        display: block;
+        height: 4px;
+        background: #15305c;
+    }
+</style>
