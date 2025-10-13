@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import Links from '$lib/components/sections/Links.svelte';
 	import '../app.css';
 	
@@ -7,7 +8,7 @@
 
 <svelte:head>
 	<title>Gordon Stein - Software Developer & CS Education Researcher</title>
-	<link rel="icon" href="./fav.png" />
+	<link rel="icon" href="{base}/fav.png" />
 
 	<!-- Primary Meta Tags -->
 	<meta name="description" content="Gordon Stein's personal website. Software Developer & Computer Science Education Researcher." />
