@@ -25,7 +25,7 @@
 
 <div class="md:w-2/3 w-full bg-white rounded-lg shadow-lg p-8 text-center ml-auto mr-auto mt-20">
     <div class="container">
-        <h1 class="text-3xl font-bold">Gordon Stein</h1>
+        <h1 class="text-3xl font-bold"><a href="{base}/">Gordon Stein</a></h1>
     </div>
     
     <div class="container">
