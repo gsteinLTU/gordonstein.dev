@@ -49,4 +49,10 @@
         margin-right: auto;
         max-width: 60%;
     }
+
+    @media (max-width: 768px) {
+        img {
+            max-width: 100%;
+        }
+    }
 </style>
