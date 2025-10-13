@@ -5,7 +5,7 @@
 <section class="mt-6 text-left">
     <h2 class="text-2xl font-bold mb-2">Selected Projects</h2>
 
-<ProjectCard title="RoboScape Online" technologies="TypeScript, Rust, WebSockets, Docker, AWS" image="/robot.png" github="https://github.com/gsteinLTU/roboscapesim-rs">
+<ProjectCard title="RoboScape Online" technologies="TypeScript, Rust, WebSockets, Docker, AWS" image="/robot.png" github="https://github.com/gsteinLTU/roboscapesim-rs" link="projects/roboscape-online">
     RoboScape Online is a networked educational robotics simulation platform designed for novice programmers. 
     It enables students to control virtual robots in a 3D environment, facilitating collaborative learning and remote education. 
     The platform integrates with a block-based programming language, NetsBlox, to make robotics accessible to beginners.
