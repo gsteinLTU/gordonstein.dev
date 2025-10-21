@@ -90,10 +90,10 @@
     // Tabular Q-Learning Agent
 
     type Action = 'hit' | 'stand';
-    type State = [playerTotal: number, dealerUpCard: number];
+    type State = [playerTotal: number, dealerUpCard: number, hasAce: boolean];
 
     function stateKey(state: State): string {
-        return `${state[0]}:${state[1]}`;
+        return `${state[0]}:${state[1]}:${state[2]}`;
     }
 
     let qTableVersion = $state(0);
@@ -139,7 +139,7 @@
     function getState(): State {
         const playerTotal = calculateHandValue(playerHand);
         const dealerUpCard = getCardValue(dealerHand[1]);
-        return [playerTotal, dealerUpCard];
+        return [playerTotal, dealerUpCard, playerHand.some(card => card.rank === 'A')];
     }
 
     function chooseAction(state: State): Action {
@@ -299,9 +299,18 @@
                         <tr>
                             <th class="sticky-col">{pi + 4}</th>
                             {#each Array(10) as _, di}
-                                <td class="stratcell {getStrategy([pi + 4, di + 2]) ?? 'unknown'}"></td>
+                                <td class="stratcell {getStrategy([pi + 4, di + 2, false]) ?? 'unknown'}"></td>
                             {/each}
                         </tr>
+                        {#if (pi + 4) > 11}
+
+                        <tr>
+                            <th class="sticky-col">{pi + 4} (soft)</th>
+                            {#each Array(10) as _, di}
+                                <td class="stratcell {getStrategy([pi + 4, di + 2, true]) ?? 'unknown'}"></td>
+                            {/each}
+                        </tr>
+                        {/if}
                     {/each}
                 </tbody>
             </table>
