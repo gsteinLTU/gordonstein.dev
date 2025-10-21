@@ -5,7 +5,7 @@
     
     interface Props {
         title: string;
-        technologies: string;
+        technologies?: string | null;
         link?: string | null;
         github?: string | null;
         image?: string | null;
@@ -25,7 +25,9 @@
                 </a>
             {/if}
         </h3>
+        {#if technologies}
         <p class="text-gray-600 mb-4">Technologies Used: {technologies}</p>
+        {/if}
         {@render children?.()}
         {#if link}
             <p>

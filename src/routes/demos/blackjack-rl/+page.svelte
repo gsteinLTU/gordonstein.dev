@@ -99,7 +99,7 @@
     let qTableVersion = $state(0);
     let playerBrain = {
         qTable: new Map<string, Map<Action, number>>(),
-        epsilon: 0.1,
+        epsilon: (n: number) => Math.max(0.05, 1.0 * Math.pow(0.995, n)),
         alpha: 0.5,
         gamma: 0.9
     };
@@ -143,7 +143,7 @@
     }
 
     function chooseAction(state: State): Action {
-        if (Math.random() < playerBrain.epsilon) {
+        if (Math.random() < playerBrain.epsilon(gamesPlayed)) {
             return Math.random() < 0.5 ? 'hit' : 'stand';
         } else {
             const actions = playerBrain.qTable.get(stateKey(state));
@@ -180,7 +180,7 @@
         gameState = 'player-turn';
         while (gameState === 'player-turn') {
             const state = getState();
-            console.log(`State is ${state}`);
+            
             const action = chooseAction(state);
             if (action === 'hit') {
                 dealCard('player', true);
@@ -226,9 +226,13 @@
             updateQTable(state, 'stand', reward);
             gameState = 'game-over';
         }
-    gamesPlayed++;
-    resultsLast100 = [...resultsLast100, reward].slice(-100);
-    console.log(playerBrain);
+        gamesPlayed++;
+        resultsLast100 = [...resultsLast100, reward].slice(-100);
+        
+        // Prevent log from getting too long
+        if(log.length > 2000){
+            log = log.slice(-1000);
+        }
     }
 
     /**
@@ -243,13 +247,22 @@
         return null;
     }
     
+    let interval = $state(150); // ms
+
     if (browser) {
         let playLoopTimeout: NodeJS.Timeout;
         let playLoop = () => {
             playRound();
-            playLoopTimeout = setTimeout(playLoop, 1);
+            playLoopTimeout = setTimeout(playLoop, interval);
         };
         playLoop();
+        $effect(() => {
+            // When interval changes, restart the loop
+            if (playLoopTimeout) {
+                clearTimeout(playLoopTimeout);
+                playLoopTimeout = setTimeout(playLoop, interval);
+            }
+        });
         onDestroy(() => {
             if(playLoopTimeout) {
                 clearTimeout(playLoopTimeout);
@@ -259,6 +272,13 @@
 </script>
 
 <h2>Blackjack RL Demo</h2>
+
+<div style="margin-bottom: 1em; display: flex; align-items: center; gap: 1em;">
+    <label for="interval-slider" style="font-size: 0.98em; color: #555;">Interval between rounds (ms):</label>
+    <input id="interval-slider" type="range" min="1" max="1000" step="1" bind:value={interval} style="vertical-align: middle; width: 180px;" />
+    <span class="font-mono" style="min-width: 2.5em; display: inline-block;">{interval}</span>
+</div>
+
 <h3>
     Player Hand ({calculateHandValue(playerHand)}):
 </h3>
@@ -276,6 +296,16 @@
         <PlayingCard suit={card.suit} rank={card.rank} faceUp={card.faceUp} />
     {/each}
 </div>
+
+<h3>
+    Stats:
+</h3>
+<div>
+    <p>Games played: {gamesPlayed}</p>
+    <p>Player win percentage (since beginning): <span class="font-mono">{(playerWins / gamesPlayed * 100).toFixed(2)}%</span></p>
+    <p>Player win percentage (last 100 rounds): <span class="font-mono">{(resultsLast100.filter(r => r === 1).length / resultsLast100.length * 100).toFixed(2)}%</span></p>
+</div>
+
 
 <h3>
     Strategy Visualizer
@@ -318,17 +348,7 @@
     {/key}
 </div>
 
-<h3>
-    Stats:
-</h3>
-<div>
-    <p>Games played: {gamesPlayed}</p>
-    <p>Player win percentage (since beginning): <span class="font-mono">{(playerWins / gamesPlayed * 100).toFixed(2)}%</span></p>
-    <p>Player win percentage (last 100 rounds): <span class="font-mono">{(resultsLast100.filter(r => r === 1).length / resultsLast100.length * 100).toFixed(2)}%</span></p>
-</div>
-
-
-<h3>
+<h3 class="mt-3">
     Log: <button class="clear-btn" onclick={() => log = []}>Clear</button>
 </h3>
 <div class="log" bind:this={logDiv}>
@@ -348,6 +368,11 @@
         color: #333;
         font-size: 24px;
     }
+
+    h3 {
+        font-weight: bold;
+    }
+
     .hand {
         display: flex;
         gap: 10px;
