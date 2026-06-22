@@ -13,7 +13,7 @@
 <img src="{base}/RoboScapeOnlineWithAPI.png" alt="RoboScape Online Architecture" class="mt-4 rounded-lg shadow-md">
 
 <p class="mt-4">
-    The backend of RoboScape Online is built using Rust, providing performance and safety for handling real-time simulations and networking. The frontend is developed with Babylon.js, providing rich 3D graphics and an interactive user experience. The platform leverages WebSockets for real-time communication between clients and the server, ensuring smooth interactions in the shared virtual environment. The platform is containerized with Docker, simplifying deployment and scaling, and simplifying deployment to AWS Elastic Container Service (ECS) for reliable hosting and scalability.
+    The backend of RoboScape Online is built using Rust, providing performance and safety for handling real-time simulations and networking. The frontend is developed with Babylon.js, providing rich 3D graphics and an interactive user experience. The platform leverages WebSockets for real-time communication between clients and the server, ensuring smooth interactions in the shared virtual environment. The platform is containerized with Docker, simplifying deployment and scaling to AWS Elastic Container Service (ECS) for reliable hosting and scalability.
 </p>
 
 <img src="{base}/hellocustomblocks.png" alt="RoboScape Online NetsBlox Integration" class="mt-4 rounded-lg shadow-md">
