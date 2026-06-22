@@ -7,12 +7,13 @@
         title: string;
         technologies?: string | null;
         link?: string | null;
+        linkText?: string;
         github?: string | null;
         image?: string | null;
         children?: any;
     }
 
-    let { title, technologies, link = null, github = null, image = null, children } : Props = $props();
+    let { title, technologies, link = null, linkText = 'Learn More', github = null, image = null, children } : Props = $props();
 </script>
 
 <article class="bg-white rounded-lg shadow-lg p-6 mb-6 flex flex-row gap-2">
@@ -31,7 +32,7 @@
         {@render children?.()}
         {#if link}
             <p>
-                <a href={link} class="text-blue-500 hover:underline mt-4 inline-block" target="_blank" rel="noopener noreferrer">Learn More</a>
+                <a href={link} class="text-blue-500 hover:underline mt-4 inline-block" target="_blank" rel="noopener noreferrer">{linkText}</a>
             </p>
         {/if}
     </div>
