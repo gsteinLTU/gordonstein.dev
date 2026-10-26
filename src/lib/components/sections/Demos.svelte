@@ -3,7 +3,7 @@
 </script>
 
 <section class="mt-6 text-left">
-    <h2 class="text-2xl font-bold mb-2">Assorted Demos</h2>
+    <h2 class="text-2xl font-bold mb-2">Experiments</h2>
 
     <ProjectCard
         title="PivotSim"

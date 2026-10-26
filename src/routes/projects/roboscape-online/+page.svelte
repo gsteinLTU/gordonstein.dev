@@ -21,7 +21,7 @@
 <img src="{base}/helloscenario.png" alt="RoboScape Online NetsBlox Integration" class="rounded-lg shadow-md">
 
 <p>
-    An core feature of RoboScape Online is its integration with NetsBlox, a block-based programming language designed for education. This not only makes it easier for beginners to get started with programming, but also allows for deeper interactions. 
+    A core feature of RoboScape Online is its integration with NetsBlox, a block-based programming language designed for education. This not only makes it easier for beginners to get started with programming, but also allows for deeper interactions. 
     All scenarios available in RoboScape Online are implemented as NetsBlox projects, allowing users to modify and create their own scenarios using the familiar block-based interface. This integration enhances the learning experience by providing a seamless transition between programming and simulation.
 </p>
 
